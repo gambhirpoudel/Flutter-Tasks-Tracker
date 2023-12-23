@@ -1,4 +1,5 @@
-import 'package:firstdemo/pages/login.dart';
+import 'package:firstdemo/pages/home.dart';
+// import 'package:firstdemo/pages/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Handjet'),
-      home: const Scaffold(
-        body: LoginPage(),
-      ),
+      // home: const Scaffold(
+      //   body: LoginPage(),
+      // ),
+      home: const HomePage(),
     );
   }
 }

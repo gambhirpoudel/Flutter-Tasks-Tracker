@@ -26,22 +26,24 @@ Flutter Tasks Tracker is a simple Flutter app that allows users to manage tasks 
 
    ```bash
    git clone https://github.com/ChiniMishri/Flutter-Tasks-Tracker.git
-   flutter pub get
+
 2. Navigate to the project directory:
 
   ```bash
-   cd Flutter-Tasks-Tracker
+  cd Flutter-Tasks-Tracker
+
 3. Install dependencies:
 
   ```bash
-     flutter pub get
+  flutter pub get
 
 ## Running the App
 
    Ensure you have a device connected or an emulator running.
    Run the app using the following commands:
+   
     ```bash  
-    flutter run
+    flutter run 
 
 ### Usage
 
