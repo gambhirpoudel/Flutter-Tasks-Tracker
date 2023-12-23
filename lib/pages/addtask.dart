@@ -52,7 +52,8 @@ class _AddTaskState extends State<AddTask> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(), // Use the CustomAppBar directly
+      appBar: const CustomAppBar(
+          title: 'Add Task'), // Use the CustomAppBar directly
       body: Column(
         children: <Widget>[
           Container(
@@ -106,8 +107,10 @@ class _AddTaskState extends State<AddTask> {
               ),
             ),
           ),
-          ElevatedButton(
+          ElevatedButton.icon(
             onPressed: _addTasks,
+            icon: const Icon(Icons.add),
+            label: const Text('Add Task'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF64CCC5),
               foregroundColor: const Color(0xFFDAFFFB),
@@ -116,13 +119,6 @@ class _AddTaskState extends State<AddTask> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               elevation: 4.0,
-            ),
-            child: const Text(
-              'Add Task',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
             ),
           )
         ],

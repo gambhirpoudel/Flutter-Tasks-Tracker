@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: const CustomAppBar(title: 'Flutter Task Tracker'),
       body: Column(
         children: <Widget>[
           for (var task in tasks)
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
+                      ElevatedButton.icon(
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -99,18 +99,20 @@ class _HomePageState extends State<HomePage> {
                           backgroundColor: const Color(0xFFDAFFFB),
                           foregroundColor: const Color(0xFF64CCC5),
                         ),
-                        child: const Text('Edit'),
+                        icon: const Icon(Icons.edit),
+                        label: const Text('Edit'),
                       ),
                       const SizedBox(width: 16),
-                      ElevatedButton(
+                      ElevatedButton.icon(
                         onPressed: () {
                           _delete(task['id']);
                         },
+                        icon: const Icon(Icons.delete),
+                        label: const Text('Delete'),
                         style: ElevatedButton.styleFrom(
                           foregroundColor: const Color(0xFFDAFFFB),
                           backgroundColor: Colors.red,
                         ),
-                        child: const Text('Delete'),
                       ),
                     ],
                   ),

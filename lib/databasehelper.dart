@@ -67,6 +67,7 @@ class DatabaseHelper {
     return result.isNotEmpty ? result.first : null;
   }
 
+// to update data
   static Future<int> updateData(int id, Map<String, dynamic> data) async {
     final db = await _openDatabase();
     return await db.update('tasks', data, where: 'id=?', whereArgs: [id]);

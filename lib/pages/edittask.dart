@@ -8,6 +8,7 @@ class EditTask extends StatefulWidget {
   const EditTask({Key? key, required this.taskId}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _EditTaskState createState() => _EditTaskState();
 }
 
@@ -44,10 +45,12 @@ class _EditTaskState extends State<EditTask> {
 
     if (id > 0) {
       // Update successful
+      // ignore: use_build_context_synchronously
       Navigator.pop(context, true);
     } else {
       // Update failed
       // Handle the error or display a message
+      // ignore: avoid_print
       print('Update failed');
     }
   }
@@ -63,7 +66,7 @@ class _EditTaskState extends State<EditTask> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: const CustomAppBar(title: 'Update Task'),
       body: Column(
         children: [
           Container(
@@ -117,10 +120,12 @@ class _EditTaskState extends State<EditTask> {
               ),
             ),
           ),
-          ElevatedButton(
+          ElevatedButton.icon(
             onPressed: () {
               _updateData(context);
             },
+            icon: const Icon(Icons.edit),
+            label: const Text('Update'),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF64CCC5),
               foregroundColor: const Color(0xFFDAFFFB),
@@ -129,13 +134,6 @@ class _EditTaskState extends State<EditTask> {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               elevation: 4.0,
-            ),
-            child: const Text(
-              'Update Task',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
             ),
           )
         ],
